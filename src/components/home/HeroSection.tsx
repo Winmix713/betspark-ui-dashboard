@@ -17,7 +17,11 @@ const stats = [
   { value: "24/7", label: "Support" }
 ];
 
-const HeroSection = () => {
+interface HeroSectionProps {
+  onDashboardClick?: () => void;
+}
+
+const HeroSection = ({ onDashboardClick }: HeroSectionProps) => {
   const [textIndex, setTextIndex] = useState(0);
 
   useEffect(() => {
@@ -41,7 +45,7 @@ const HeroSection = () => {
           <div className="text-left">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 leading-tight">
               Bet Smarter With{" "}
-              <span className="bg-gradient-to-r from-blue-400 to-blue-600 bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-blue-400 via-indigo-500 to-blue-600 bg-clip-text text-transparent">
                 AI-Powered
               </span>{" "}
               <span className="block relative min-h-[1.2em]">
@@ -59,8 +63,9 @@ const HeroSection = () => {
               <Button
                 size="lg"
                 className="bg-blue-600 hover:bg-blue-700 text-white px-8"
+                onClick={onDashboardClick}
               >
-                Get Premium Access
+                Go to Dashboard
               </Button>
               <Button
                 size="lg"
@@ -90,7 +95,7 @@ const HeroSection = () => {
                 <div className="p-6">
                   <div className="flex justify-between items-center mb-6">
                     <div className="text-center">
-                      <div className="w-16 h-16 bg-gray-800 rounded-full mb-2 mx-auto flex items-center justify-center text-xl font-bold">ARS</div>
+                      <div className="w-16 h-16 bg-blue-900/50 rounded-full mb-2 mx-auto flex items-center justify-center text-xl font-bold">ARS</div>
                       <div className="text-sm font-semibold">Arsenal</div>
                     </div>
                     <div className="text-center">
@@ -98,7 +103,7 @@ const HeroSection = () => {
                       <div className="text-xs text-gray-500 mt-1">20:00 Today</div>
                     </div>
                     <div className="text-center">
-                      <div className="w-16 h-16 bg-gray-800 rounded-full mb-2 mx-auto flex items-center justify-center text-xl font-bold">CHE</div>
+                      <div className="w-16 h-16 bg-blue-900/50 rounded-full mb-2 mx-auto flex items-center justify-center text-xl font-bold">CHE</div>
                       <div className="text-sm font-semibold">Chelsea</div>
                     </div>
                   </div>
