@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -53,14 +54,14 @@ export default {
 					foreground: 'hsl(var(--card-foreground))'
 				},
 				sidebar: {
-					DEFAULT: 'hsl(var(--sidebar-background))',
-					foreground: 'hsl(var(--sidebar-foreground))',
-					primary: 'hsl(var(--sidebar-primary))',
-					'primary-foreground': 'hsl(var(--sidebar-primary-foreground))',
-					accent: 'hsl(var(--sidebar-accent))',
-					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
-					border: 'hsl(var(--sidebar-border))',
-					ring: 'hsl(var(--sidebar-ring))'
+					DEFAULT: 'hsl(var(--sidebar-background, 222.2 84% 4.9%))',
+					foreground: 'hsl(var(--sidebar-foreground, 210 40% 98%))',
+					primary: 'hsl(var(--sidebar-primary, 210 40% 98%))',
+					'primary-foreground': 'hsl(var(--sidebar-primary-foreground, 222.2 47.4% 11.2%))',
+					accent: 'hsl(var(--sidebar-accent, 217.2 32.6% 17.5%))',
+					'accent-foreground': 'hsl(var(--sidebar-accent-foreground, 210 40% 98%))',
+					border: 'hsl(var(--sidebar-border, 217.2 32.6% 17.5%))',
+					ring: 'hsl(var(--sidebar-ring, 212.7 26.8% 83.9%))'
 				}
 			},
 			borderRadius: {
@@ -84,11 +85,21 @@ export default {
 					to: {
 						height: '0'
 					}
+				},
+				'pulse': {
+					'0%, 100%': { opacity: '1' },
+					'50%': { opacity: '0.5' }
+				},
+				'float': {
+					'0%, 100%': { transform: 'translateY(0)' },
+					'50%': { transform: 'translateY(-10px)' }
 				}
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
-				'accordion-up': 'accordion-up 0.2s ease-out'
+				'accordion-up': 'accordion-up 0.2s ease-out',
+				'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+				'float': 'float 4s ease-in-out infinite'
 			}
 		}
 	},
